@@ -32,7 +32,7 @@ try {
 
 if (
     process.env.NODE_ENV === `production` &&
-    config.siteUrl === `http://localhost:8000` &&
+    config.siteUrl === `https://blog-ronald.netlify.app` &&
     !process.env.SITEURL
 ) {
     throw new Error(
@@ -56,6 +56,7 @@ module.exports = {
         /**
          *  Content Plugins
          */
+        
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -85,6 +86,7 @@ module.exports = {
         /**
          *  Utility Plugins
          */
+        
         {
             resolve: `gatsby-plugin-ghost-manifest`,
             options: {
@@ -200,5 +202,6 @@ module.exports = {
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-offline`,
+        `gatsby-plugin-netlify-cms`,
     ],
 };
